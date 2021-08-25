@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-24 17:14+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: rent/apps.py:8
+msgid "Rent"
+msgstr "اجاره"
+
+#: rent/apps.py:9
+msgid "Rents"
+msgstr "اجاره ها"
+
+#: rent/models.py:17
+msgid "Brand"
+msgstr "برند"
+
+#: rent/models.py:20
+msgid "Name"
+msgstr "اسم"
+
+#: rent/models.py:21
+msgid "Color"
+msgstr "رنگ"
+
+#: rent/models.py:22
+msgid "Price"
+msgstr "هزینه"
+
+#: rent/models.py:23
+msgid "In Tomans"
+msgstr "به تومان"
+
+#: rent/models.py:25
+msgid "Is Enable"
+msgstr "فعال است"
+
+#: rent/models.py:27
+msgid "Created Time"
+msgstr "زمان تولید"
+
+#: rent/models.py:28
+msgid "Updated Time"
+msgstr "زمان به روز رسانی"
+
+#: rent/models.py:31
+msgid "Car"
+msgstr "ماشین"
+
+#: rent/models.py:32
+msgid "Cars"
+msgstr "ماشین ها"
