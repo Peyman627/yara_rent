@@ -108,7 +108,7 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tehran'
 

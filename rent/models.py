@@ -27,7 +27,11 @@ class Car(models.Model):
     created_time = models.DateTimeField(_('Created Time'), auto_now_add=True)
     updated_time = models.DateTimeField(_('Updated Time'), auto_now=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
+        ordering = ('id', )
         verbose_name = _('Car')
         verbose_name_plural = _('Cars')
-        unique_together = [('brand', 'name')]
+        unique_together = (('brand', 'name'), )
