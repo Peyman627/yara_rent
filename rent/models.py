@@ -1,7 +1,8 @@
-from enum import unique
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
+
+from users.models import Profile
 
 
 class Car(models.Model):
@@ -31,7 +32,23 @@ class Car(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('id', )
         verbose_name = _('Car')
         verbose_name_plural = _('Cars')
         unique_together = (('brand', 'name'), )
+
+
+class CarRent(models.Model):
+    user = models.ForeignKey(Profile,
+                             verbose_name=_('user'),
+                             on_delete=models.PROTECT)
+    car = models.ForeignKey(Car,
+                            verbose_name=_('car'),
+                            on_delete=models.PROTECT)
+    amount = models.PositiveIntegerField(_('amount'))
+    start_time = models.DateTimeField(blank=True, null=True)
+    end_time = models.DateTimeField(blank=True, null=True)
+    is_enable = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = _('car rent')
+        verbose_name_plural = _('car rents')
