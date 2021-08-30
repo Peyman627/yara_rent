@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.db.models.fields import NullBooleanField
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
 
@@ -40,10 +43,10 @@ class Car(models.Model):
 class CarRent(models.Model):
     user = models.ForeignKey(Profile,
                              verbose_name=_('user'),
-                             on_delete=models.PROTECT)
+                             on_delete=models.CASCADE)
     car = models.ForeignKey(Car,
                             verbose_name=_('car'),
-                            on_delete=models.PROTECT)
+                            on_delete=models.CASCADE)
     amount = models.PositiveIntegerField(_('amount'))
     start_time = models.DateTimeField(blank=True, null=True)
     end_time = models.DateTimeField(blank=True, null=True)
@@ -52,3 +55,6 @@ class CarRent(models.Model):
     class Meta:
         verbose_name = _('car rent')
         verbose_name_plural = _('car rents')
+
+    def __str__(self):
+        return f'{self.user}, car: {self.car}, amount: {self.amount}'
