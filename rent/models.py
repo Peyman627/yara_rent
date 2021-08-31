@@ -1,9 +1,7 @@
-import datetime
-
 from django.db import models
-from django.db.models.fields import NullBooleanField
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
+from django.urls import reverse
 
 from users.models import Profile
 
@@ -33,6 +31,9 @@ class Car(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('car_detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = _('Car')
