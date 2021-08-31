@@ -33,7 +33,7 @@ class Car(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('car_detail', kwargs={'pk': self.pk})
+        return reverse('rent:car_detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = _('Car')

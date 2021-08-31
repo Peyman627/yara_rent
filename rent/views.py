@@ -1,19 +1,15 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_list_or_404, render, get_object_or_404
 
 from .models import Car
 
 
 def car_list(request):
-    cars = Car.objects.all()
+    cars = get_list_or_404(Car)
     context = {'cars': cars}
     return render(request, 'rent/car_list.html', context)
 
 
 def car_detail(request, pk):
-    try:
-        car = Car.objects.get(pk=pk)
-    except Car.DoesNotExist:
-        raise Http404
+    car = get_object_or_404(Car, pk=pk)
     context = {'car': car}
     return render(request, 'rent/car_detail.html', context)
