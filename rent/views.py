@@ -1,15 +1,16 @@
 from django.shortcuts import get_list_or_404, render, get_object_or_404
+from django.views import generic
 
 from .models import Car
 
 
-def car_list(request):
-    cars = get_list_or_404(Car)
-    context = {'cars': cars}
-    return render(request, 'rent/car_list.html', context)
+class CarListView(generic.ListView):
+    template_name = 'rent/car_list.html'
+    queryset = Car.objects.all()
+    context_object_name = 'cars'
 
 
-def car_detail(request, pk):
-    car = get_object_or_404(Car, pk=pk)
-    context = {'car': car}
-    return render(request, 'rent/car_detail.html', context)
+class CarDetailView(generic.DetailView):
+    model = Car
+    template_name = 'rent/car_detail.html'
+    context_object_name = 'car'

@@ -5,6 +5,7 @@ from . import views
 app_name = 'rent'
 
 urlpatterns = [
-    path('car-list/', views.car_list, name='car_list'),
-    path('car-list/<int:pk>', views.car_detail, name='car_detail'),
+    path('car-list/', views.CarListView.as_view(), name='car_list'),
+    path('car-list/<int:pk>', views.CarDetailView.as_view(),
+         name='car_detail'),
 ]
