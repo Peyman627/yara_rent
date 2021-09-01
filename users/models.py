@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 
 class Profile(models.Model):
@@ -18,6 +19,9 @@ class Profile(models.Model):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
+
+    def get_absolute_url(self):
+        return reverse('users:profile_detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return f'id: {self.user.id} phone: {self.phone_number}'
