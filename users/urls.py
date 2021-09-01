@@ -10,4 +10,7 @@ urlpatterns = [
     path('profile-list/<int:pk>',
          views.ProfileDetailView.as_view(),
          name='profile_detail'),
+    path('profile-create',
+         views.ProfileCreateView.as_view(),
+         name='profile-create'),
 ]

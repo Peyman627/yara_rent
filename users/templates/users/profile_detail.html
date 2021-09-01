@@ -11,7 +11,11 @@
 <body>
     {{ profile }}
     <br>
+
+    {% if profile.avatar %}
     <img src="{{ profile.avatar.url }}" alt="">
+    {% endif %}
+
 </body>
 
 </html>
