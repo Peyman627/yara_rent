@@ -9,7 +9,10 @@ class Profile(models.Model):
                                 verbose_name=_('user'),
                                 on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField(_('age'))
-    avatar = models.ImageField(_('avatar'), upload_to='avatars', blank=True)
+    avatar = models.ImageField(_('avatar'),
+                               upload_to='users',
+                               blank=True,
+                               null=True)
     phone_number = models.PositiveBigIntegerField(
         _('phone number'),
         unique=True,
